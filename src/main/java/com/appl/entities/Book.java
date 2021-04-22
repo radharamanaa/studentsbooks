@@ -1,9 +1,12 @@
 package com.appl.entities;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
+@ComponentScan
 @Table(name = "BOOK")
 public class Book {
     @Id

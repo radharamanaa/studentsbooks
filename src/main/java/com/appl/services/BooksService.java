@@ -7,6 +7,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class BooksService {
 
-    @Autowired
+
     BooksRepo repo;
+
+    public BooksRepo getRepo() {
+        return repo;
+    }
+    @Autowired
+    public void setRepo(BooksRepo repo) {
+        this.repo = repo;
+    }
 }

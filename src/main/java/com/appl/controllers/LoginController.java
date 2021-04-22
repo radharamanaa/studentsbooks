@@ -10,12 +10,21 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
 
-    @Autowired
+
     LoginUserRepo loginUserRepo;
+    @Autowired
+    public LoginUserRepo getLoginUserRepo() {
+        return loginUserRepo;
+    }
+
+    public void setLoginUserRepo(LoginUserRepo loginUserRepo) {
+        this.loginUserRepo = loginUserRepo;
+    }
 
     @ModelAttribute("loginUser")
     public LoginUser getEmptyLoginUser(){
@@ -26,19 +35,18 @@ public class LoginController {
     public String getHome(){
         return "login";
     }
-
+    //todo: Need to add User to session here
     @PostMapping("/processUserLogin")
-    public String processUserLogin(@ModelAttribute LoginUser loginUser, BindingResult result, Model model){
-        System.out.println(loginUser.toString());
-        LoginUser byUsername = loginUserRepo.findByUsername(loginUser.getUsername().trim());
-        if(byUsername !=null && byUsername.getPassword().equals(loginUser.getPassword())){
+    public String processUserLogin(@RequestParam("username")String username,@RequestParam("password")String password,Model model){
+//        System.out.println(loginUser.toString());
+        LoginUser byUsername = loginUserRepo.findByUsername(username.trim());
+        if(byUsername !=null && byUsername.getPassword().equals(password)){
             return "OptionsPage";
-
         }else{
-            model.addAttribute("loginUser",getEmptyLoginUser());
             model.addAttribute("loginMessage","Login Failed");
             return "login";
         }
+//        return "login";
     }
 
 }

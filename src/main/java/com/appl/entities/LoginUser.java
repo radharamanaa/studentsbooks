@@ -1,11 +1,14 @@
 package com.appl.entities;
 
 
+import org.springframework.context.annotation.ComponentScan;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 
 @Entity
+@ComponentScan
 @Table(name = "LOGINUSER")
 public class LoginUser {
     @Id
