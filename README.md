@@ -8,3 +8,6 @@ He will be able to add books to the student, with per student getting max of 2 b
 He will be able to remove books from the student account.
 He is able to add student to the DB.
 We are not giving roles to the users according to their levels and permissions(atleast as of now).
+
+
+As of now, All the Repository beans and service beans are getting created properly!
