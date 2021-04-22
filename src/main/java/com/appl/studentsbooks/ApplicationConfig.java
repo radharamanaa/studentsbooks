@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -23,16 +24,15 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     @Autowired
     ServletContext context;
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("css/**","images/**").
-                addResourceLocations("classpath:static/css/","classpath:static/images/");
+    public void setContext(ServletContext context) {
+        this.context = context;
     }
+
     @Bean
     @Description("Thymeleaf Template Resolver")
     public ServletContextTemplateResolver templateResolver() {
         ServletContextTemplateResolver templateResolver = new ServletContextTemplateResolver(context);
-        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("/WEB-INF/jsp/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
 
@@ -44,7 +44,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver());
-//        templateEngine.setTemplateEngineMessageSource(messageSource());
+        templateEngine.setTemplateEngineMessageSource(messageSource());
         return templateEngine;
     }
 
@@ -55,5 +55,12 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
         viewResolver.setTemplateEngine(templateEngine());
         viewResolver.setOrder(1);
         return viewResolver;
+    }
+    @Bean
+    @Description("Spring Message Resolver")
+    public ResourceBundleMessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("messages");
+        return messageSource;
     }
 }
