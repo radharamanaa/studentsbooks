@@ -1,7 +1,9 @@
 # studentsbooks
 
-This project was made by me to understand and comprehend the capabilities of the Spring Framework, and so many of its features. This application has a librarian login in which he can
+This project uses thymeleaf as View Resolver, hibernate as the JPA Vendor and Spring Data JPA for its data requirements. This application has a librarian login in which he can
 issue books to the students. This application is intended to be very simple.
+
+You can see how to use Validations, form Binding to Objects using Thymeleaf in this application.
 
 It will have a librarian logging in, with session validations.
 He will be able to add books to the student, with per student getting max of 2 books
