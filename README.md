@@ -11,3 +11,10 @@ We are not giving roles to the users according to their levels and permissions(a
 
 
 As of now, All the Repository beans and service beans are getting created properly!
+
+Simply Clone or download this repo and 
+Import as Maven project
+Compile
+Spring boot run from Maven Goals
+Browse from anybrowser to http://localhost:8080
+Welcome page is seen
