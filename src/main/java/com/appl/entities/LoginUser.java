@@ -11,6 +11,8 @@ import javax.validation.constraints.NotNull;
 @ComponentScan
 @Table(name = "LOGINUSER")
 public class LoginUser {
+
+    public static transient final String loggedInUser = "loggedInUser";
     public LoginUser(){}
     public LoginUser(String username, String password) {
         this.username = username;

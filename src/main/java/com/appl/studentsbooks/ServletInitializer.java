@@ -9,17 +9,11 @@ import javax.servlet.ServletException;
 @Component
 public class ServletInitializer extends SpringBootServletInitializer {
 
-	ServletContext servletContext;
+
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(StudentsbooksApplication.class);
-	}
-
-	@Override
-	public void onStartup(ServletContext servletContext) throws ServletException {
-		super.onStartup(servletContext);
-
 	}
 
 }
