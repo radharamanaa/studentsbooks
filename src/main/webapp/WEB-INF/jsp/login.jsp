@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<%@ taglib uri="https://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -24,7 +25,7 @@
     <label for="username">UserName</label>
     <input type="text" id="username" minlength="8" name="username"><br>
     <label for="password">Password</label>
-    <input type="password" id="password" minlength="8" name="password">
+    <input type="password" id="password" minlength="8" name="password" >
     <br>
     <input type="submit" value="submit">
 </form>

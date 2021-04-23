@@ -11,6 +11,12 @@ import javax.validation.constraints.NotNull;
 @ComponentScan
 @Table(name = "LOGINUSER")
 public class LoginUser {
+    public LoginUser(){}
+    public LoginUser(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue
     int id;

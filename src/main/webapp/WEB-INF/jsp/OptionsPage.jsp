@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri="https://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
   <meta charset="utf-8">
