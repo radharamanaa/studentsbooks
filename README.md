@@ -8,3 +8,13 @@ He will be able to add books to the student, with per student getting max of 2 b
 He will be able to remove books from the student account.
 He is able to add student to the DB.
 We are not giving roles to the users according to their levels and permissions(atleast as of now).
+
+
+As of now, All the Repository beans and service beans are getting created properly!
+
+Simply Clone or download this repo and 
+Import as Maven project
+Compile
+Spring boot run from Maven Goals
+Browse from anybrowser to http://localhost:8080
+Welcome page is seen
