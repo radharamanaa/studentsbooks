@@ -17,7 +17,7 @@ public class InsertInitialData{
     public void setUserRepo(LoginUserRepo userRepo) {
         this.userRepo = userRepo;
     }
-    @Value("administrator")
+    @Value("${default.login.username}")
     String defUserName;
     @Value("administrator")//need to get these from resources
     String defPassword;
