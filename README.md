@@ -1,5 +1,5 @@
 # studentsbooks
-Please find a working video on https://vimeo.com/541343329 as of 2 May 2021. This project is still in Development. This project was updated to use REST API for ajax request in book issue page! 
+Please find a working video on https://vimeo.com/541343329 as of 2 May 2021. This project is still in Development. This project was updated to use REST API for ajax request in book issue page! Updated the project to use javascript validations for book issue.
 
 
 This project uses thymeleaf as View Resolver, hibernate as the JPA Vendor and Spring Data JPA for its data requirements. This application has a librarian login in which he can
